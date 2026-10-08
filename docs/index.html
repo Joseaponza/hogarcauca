@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HogarCauca | Encuentra tu próximo hogar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container navbar-content">
+
+            <a href="index.html" class="logo">
+                Hogar<span>Cauca</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#propiedades">Comprar</a>
+                <a href="#propiedades">Arrendar</a>
+                <a href="#publicar">Publicar inmueble</a>
+                <a href="#login" class="btn-login">Iniciar sesión</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-overlay">
+
+                <div class="hero-content">
+
+                    <h1>
+                        Encuentra el lugar<br>
+                        de tus sueños
+                    </h1>
+
+                    <p>
+                        Compra, arrienda o publica tu propiedad
+                        de manera fácil y segura.
+                    </p>
+
+
+                    <!-- BUSCADOR VISUAL -->
+                    <form class="search-box" onsubmit="return false;">
+
+                        <div class="search-field">
+                            <label for="operation">Operación</label>
+
+                            <select name="operation" id="operation">
+                                <option value="">Todas</option>
+                                <option value="venta">Comprar</option>
+                                <option value="arriendo">Arrendar</option>
+                            </select>
+                        </div>
+
+
+                        <div class="search-field">
+                            <label for="type">Tipo de inmueble</label>
+
+                            <select name="type" id="type">
+                                <option value="">Todos</option>
+                                <option value="casa">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="lote">Lote</option>
+                                <option value="local">Local comercial</option>
+                            </select>
+                        </div>
+
+
+                        <div class="search-field">
+                            <label for="city">Ubicación</label>
+
+                            <input
+                                type="text"
+                                name="city"
+                                id="city"
+                                placeholder="Ej. Popayán"
+                            >
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="btn-search"
+                            onclick="buscarPropiedades()"
+                        >
+                            Buscar
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROPIEDADES -->
+        <section class="featured container" id="propiedades">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        PROPIEDADES
+                    </span>
+
+                    <h2>
+                        Propiedades destacadas
+                    </h2>
+
+                </div>
+
+                <a href="#propiedades" class="view-all">
+                    Ver todas →
+                </a>
+
+            </div>
+
+
+            <div class="property-grid">
+
+
+                <!-- CASA -->
+                <article class="property-card">
+
+                    <div class="property-image">
+
+                        <img
+                            src="images/casas/casa1.jpg"
+                            alt="Casa moderna"
+                        >
+
+                        <span class="property-badge">
+                            Venta
+                        </span>
+
+                        <button
+                            class="favorite"
+                            type="button"
+                            title="Agregar a favoritos"
+                            onclick="toggleFavorite(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="property-info">
+
+                        <span class="property-type">
+                            CASA
+                        </span>
+
+                        <h3>
+                            Casa moderna en Popayán
+                        </h3>
+
+                        <p class="property-location">
+                            📍 Popayán, Cauca
+                        </p>
+
+                        <div class="property-details">
+
+                            <span>3 hab.</span>
+                            <span>2 baños</span>
+                            <span>120 m²</span>
+
+                        </div>
+
+                        <strong class="property-price">
+                            $280.000.000
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- APARTAMENTO -->
+                <article class="property-card">
+
+                    <div class="property-image">
+
+                        <img
+                            src="images/apartamentos/apartamento1.jpg"
+                            alt="Apartamento moderno"
+                        >
+
+                        <span class="property-badge">
+                            Venta
+                        </span>
+
+                        <button
+                            class="favorite"
+                            type="button"
+                            title="Agregar a favoritos"
+                            onclick="toggleFavorite(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="property-info">
+
+                        <span class="property-type">
+                            APARTAMENTO
+                        </span>
+
+                        <h3>
+                            Apartamento moderno
+                        </h3>
+
+                        <p class="property-location">
+                            📍 Popayán, Cauca
+                        </p>
+
+                        <div class="property-details">
+
+                            <span>2 hab.</span>
+                            <span>2 baños</span>
+                            <span>75 m²</span>
+
+                        </div>
+
+                        <strong class="property-price">
+                            $195.000.000
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CASA EN ARRIENDO -->
+                <article class="property-card">
+
+                    <div class="property-image">
+
+                        <img
+                            src="images/casas/casa2.jpg"
+                            alt="Casa familiar"
+                        >
+
+                        <span class="property-badge rent">
+                            Arriendo
+                        </span>
+
+                        <button
+                            class="favorite"
+                            type="button"
+                            title="Agregar a favoritos"
+                            onclick="toggleFavorite(this)"
+                        >
+                            ♡
+                        </button>
+
+                    </div>
+
+
+                    <div class="property-info">
+
+                        <span class="property-type">
+                            CASA
+                        </span>
+
+                        <h3>
+                            Casa familiar en conjunto
+                        </h3>
+
+                        <p class="property-location">
+                            📍 Popayán, Cauca
+                        </p>
+
+                        <div class="property-details">
+
+                            <span>4 hab.</span>
+                            <span>3 baños</span>
+                            <span>150 m²</span>
+
+                        </div>
+
+                        <strong class="property-price">
+                            $1.400.000 / mes
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PUBLICAR -->
+        <section class="publish-section" id="publicar">
+
+            <div class="container publish-content">
+
+                <div>
+
+                    <span class="section-tag">
+                        ¿TIENES UNA PROPIEDAD?
+                    </span>
+
+                    <h2>
+                        Publica tu inmueble con nosotros
+                    </h2>
+
+                    <p>
+                        Llega a cientos de personas que están buscando
+                        su próximo hogar.
+                    </p>
+
+                </div>
+
+                <a
+                    href="#publicar"
+                    class="btn-publish"
+                >
+                    Publicar inmueble
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    Hogar<span>Cauca</span>
+                </a>
+
+                <p>
+                    Encuentra tu próximo hogar de manera fácil y segura.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Explorar
+                </h4>
+
+                <a href="#propiedades">
+                    Comprar
+                </a>
+
+                <a href="#propiedades">
+                    Arrendar
+                </a>
+
+                <a href="#publicar">
+                    Publicar
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Información
+                </h4>
+
+                <a href="#">
+                    Nosotros
+                </a>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+                <a href="#">
+                    Términos y condiciones
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 HogarCauca. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
